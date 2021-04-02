@@ -5,14 +5,12 @@ import CocktailItemComponent from "./CocktailItemComponent";
 
 export default function CocktailComponent(props) {
     //debugger;
-    let cocktail = useSelector((state)=>state.cocktail.drinks);
-    let loading = useSelector((state)=>state.cocktail.loading);
-    let dispatchActionToFetch = useDispatch();
-    let [search, updateSearchValue] = new useState("");
+    let cocktail = useSelector((state)=>state.cocktail.drinks),
+    loading = useSelector((state)=>state.cocktail.loading),
+    dispatchActionToFetch = useDispatch(),
+    [search, updateSearchValue] = new useState("");
 
     //let cocktail = cocktailObj ? cocktailObj[0] : undefined;
- 
-    
 
     let searchTextBox = (evt)=> {
         let typedValue = evt.target.value;
@@ -68,10 +66,10 @@ export default function CocktailComponent(props) {
                 <table>
                 <thead>
                     <tr>
-                        <th onClick={()=>sortOnName("strDrink")}>Name</th>
-                        <th onClick={()=>sortOnName("strCategory")}>Category</th>
+                        <th onClick={()=>sortOnName("strDrink")} style={{cursor:"pointer"}} >Name</th>
+                        <th onClick={()=>sortOnName("strCategory")} style={{cursor:"pointer"}}>Category</th>
                         <th>Tag</th>
-                        <th onClick={()=>sortOnName("strAlcoholic")}>Alcoholic</th>
+                        <th onClick={()=>sortOnName("strAlcoholic")} style={{cursor:"pointer"}}>Alcoholic</th>
                         <th>Instructions</th>
                         <th>Thumbnail</th>
                     </tr>
